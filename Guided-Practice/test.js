@@ -5,13 +5,18 @@
  * function `LuckyNumber` with two parameters: `num1
  * = 5` and `num2 = 12`
  */
-
+expect(LuckyNumber(5, 12)).toBe(17);
 /**
  * how prompt 1 would look inside a test file
  * utilizing the describe block and an it statement
  * for each test on that particular method mentioned
  * in the describe block
  */
+describe("LuckyNumber", () => {
+  test("adds two numbers together", () => {
+    expect(LuckyNumber(5, 12)).toBe(17);
+  });
+});
 
 /**
  * Prompt 2:
@@ -21,12 +26,20 @@
  * 7` and `num2 = 12`
  */
 
+expect(GetmeNumber(7, 12)).not.toBe(8);
+
 /**
  * how prompt 2 would look inside a test file
  * utilizing the describe block and an it statement
  * for each test on that particular method mentioned
  * in the describe block
  */
+
+describe("GetmeNumber", () => {
+  test("should generate the correct value", () => {
+    expect(GetmeNumber(7, 12)).not.toBe(8);
+  });
+});
 
 /**
  * Prompt 3:
@@ -37,7 +50,6 @@
  * `4.01123`, in order to expect a value close to `9.
  * 52`?
  */
-
 /**
  * `toBeCloseTo` can be used to check that the addition of the 2
  * numbers is close to 9.52. We can utilize the function to
@@ -45,12 +57,20 @@
  * digits we care about
  */
 
+expect(total(5.51021, 4.01123)).toBeCloseTo(9.52);
+
 /**
  * how prompt 3 would look inside a test file
  * utilizing the describe block and an it statement
  * for each test on that particular method mentioned
  * in the describe block
  */
+
+describe("total", () => {
+  test("adds the total sum of two values", () => {
+    expect(total(5.51021, 4.01123)).toBeCloseTo(9.52);
+  });
+});
 
 /**
  * Prompt 4:
@@ -70,9 +90,21 @@
  * };
  */
 
+expect(forSale).toHaveProperty(["kitchen", "nice.oven"]);
+expect(forSale).toHaveProperty(["kitchen.amenities", "oven"]);
+
 /**
  * how prompt 4 would look inside a test file
  * utilizing the describe block and an it statement
  * for each test on that particular method mentioned
  * in the describe block
  */
+
+describe("forSale", () => {
+  test("should contain the nice.oven value in kitchen property", () => {
+    expect(forSale).toHaveProperty(["kitchen", "nice.oven"]);
+  });
+  test("should contain the oven value in kitchen.amenities property", () => {
+    expect(forSale).toHaveProperty(["kitchen.amenities", "oven"]);
+  });
+});
