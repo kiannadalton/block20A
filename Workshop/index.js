@@ -8,7 +8,7 @@ function getTotalCost(pricePerRefill, refills) {
   return pricePerRefill * refills;
 }
 
-/**
+/**`
  * If the customer has a subscription, apply a 25% discount
  * to the total cost of the refills.
  * @param {number} totalCostWithoutDiscounts

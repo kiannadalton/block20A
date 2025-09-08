@@ -76,3 +76,20 @@ describe("getTotalCost()", () => {
 });
 
 // TODO: Write tests for applyDiscount() and applyCoupon()
+describe("applyDiscount", () => {
+  test("applies discount when discount is true", () => {
+    expect(applyDiscount(50, true)).toEqual(37.5);
+  });
+  test("does not applies discount when discount is false", () => {
+    expect(applyDiscount(50, false)).toEqual(50);
+  });
+});
+
+describe("applyCoupon", () => {
+  test("applies discount when discount is true", () => {
+    expect(applyCoupon(50, true)).toEqual(40);
+  });
+  test("does not applies discount when discount is false", () => {
+    expect(applyCoupon(50, false)).toEqual(50);
+  });
+});
