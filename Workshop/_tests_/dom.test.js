@@ -73,16 +73,24 @@ describe("The document", () => {
   // TODO: Complete this test case so it is testing the described behavior.
   test("displays the correct cost for the user's input values after clicking the calculate button", () => {
     const price = getByRole(document, "spinbutton", { name: /price/i });
+    const refills = getByRole(document, "spinbutton", { name: /refills/i });
     const subscribed = getByRole(document, "checkbox", {
       name: /subscribed/i,
     });
     const calculateButton = getByRole(document, "button", {
       name: /calculate/i,
     });
+    const output = getByRole(document, "status", {
+      name: /cost/i,
+    });
+
+    price.value = 50;
+    refills.value = 1;
+    subscribed.checked = true;
 
     calculateButton.click();
 
     // TODO: Change this assertion to check the correct value.
-    expect(true).toBe(false);
+    expect(output.textContent).toEqual("$37.50");
   });
 });
